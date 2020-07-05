@@ -16,7 +16,7 @@
             <br>
             <p v-html="finishedLink"></p>
             <p><button v-on:click="increse(10, $event)">Click Me!</button>{{ counter }}</p>
-            <p>Coordinates: {{ x }} / {{ y }} - <span v-on:mousemove="dummy">DEAD SPOT</span></p>
+            <p>Coordinates: {{ x }} / {{ y }} - <span v-on:mousemove.stop="">DEAD SPOT</span></p>
         </div>
         <script>
             new Vue({
