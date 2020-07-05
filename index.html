@@ -9,6 +9,7 @@
     </head>
     <body>
         <div id="app">
+            <input type="text" v-on:input="changeTitle">
             <p>{{ title }}</p>
         </div>
         <script>
@@ -17,6 +18,11 @@
                 data: {
                     title: 'Hello World!',
 
+                },
+                methods: {
+                    changeTitle: function(event){
+                        this.title = event.target.value;
+                    }
                 }
             })
         </script>
