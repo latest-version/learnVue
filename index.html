@@ -15,7 +15,7 @@
             <p>{{ sayHello() }} : <a v-bind:href="link">Google</a></p>
             <br>
             <p v-html="finishedLink"></p>
-            <p><button v-on:click="increse">Click Me!</button>{{ counter }}</p>
+            <p><button v-on:click="increse(10, $event)">Click Me!</button>{{ counter }}</p>
             <p>Coordinates: {{ x }} / {{ y }}</p>
         </div>
         <script>
@@ -37,8 +37,8 @@
                         this.title = "Hi";
                         return this.title;
                     },
-                    increse: function(){
-                        this.counter++;
+                    increse: function(step, event){
+                        this.counter += step;
                     },
                     updateCoordinates: function(event){
                         this.x = event.clientX;
