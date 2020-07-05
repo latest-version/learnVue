@@ -17,6 +17,7 @@
             <p v-html="finishedLink"></p>
             <p><button v-on:click="increse(10, $event)">Click Me!</button>{{ counter }}</p>
             <p>Coordinates: {{ x }} / {{ y }} - <span v-on:mousemove.stop="">DEAD SPOT</span></p>
+            <p><input v-on:keyup.enter.space="alertMe"></p>
         </div>
         <script>
             new Vue({
@@ -46,6 +47,9 @@
                     },
                     dummy: function(event){
                         event.stopPropagation();
+                    },
+                    alertMe: function(){
+                        alert('Alert');
                     }
                 }
             });
