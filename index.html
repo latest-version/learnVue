@@ -8,13 +8,15 @@
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     </head>
     <body>
-        <div id="app">
+        <div id="app" v-on:mousemove="updateCoordinates">
             <input type="text" v-on:input="changeTitle">
             <p v-once>{{ title }}</p>
             <br>
             <p>{{ sayHello() }} : <a v-bind:href="link">Google</a></p>
             <br>
             <p v-html="finishedLink"></p>
+            <p><button v-on:click="increse">Click Me!</button>{{ counter }}</p>
+            <p>Coordinates: {{ x }} / {{ y }}</p>
         </div>
         <script>
             new Vue({
@@ -22,7 +24,10 @@
                 data: {
                     title: 'Hello World!',
                     link: 'http://www.google.com',
-                    finishedLink: '<a href="http://www.google.com">Google</a>'
+                    finishedLink: '<a href="http://www.google.com">Google</a>',
+                    counter: 0,
+                    x: 0,
+                    y: 0
                 },
                 methods: {
                     changeTitle: function(event){
@@ -31,6 +36,13 @@
                     sayHello: function(){
                         this.title = "Hi";
                         return this.title;
+                    },
+                    increse: function(){
+                        this.counter++;
+                    },
+                    updateCoordinates: function(event){
+                        this.x = event.clientX;
+                        this.y = event.clientY;
                     }
                 }
             });

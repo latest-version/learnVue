@@ -4,3 +4,4 @@ For leaning purposes, use the lastest version with:
 
 # Extensions for Visual Studio Code
 - Live Server
+- Vetur
