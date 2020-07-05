@@ -13,13 +13,16 @@
             <p v-once>{{ title }}</p>
             <br>
             <p>{{ sayHello() }} : <a v-bind:href="link">Google</a></p>
+            <br>
+            <p v-html="finishedLink"></p>
         </div>
         <script>
             new Vue({
                 el: '#app',
                 data: {
                     title: 'Hello World!',
-                    link: 'http://www.google.com'
+                    link: 'http://www.google.com',
+                    finishedLink: '<a href="http://www.google.com">Google</a>'
                 },
                 methods: {
                     changeTitle: function(event){
