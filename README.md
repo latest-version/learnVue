@@ -11,3 +11,4 @@ For leaning purposes, use the lastest version with:
 - data: Store Data to be used
 - mothods: Methods of this Vue Instance
 - computed: Dependence Properties
+- watch: Execute code upon data changes

@@ -23,7 +23,7 @@
             <p>two-way-binding</p>
             <p><input type="text" v-model="name"></p>
             <p>{{ name }}</p>
-            <p>{{ result() }} || {{ output }}</p>
+            <p>{{ counter}} : {{ result() }} || {{ output }}</p>
         </div>
         <script>
             new Vue({
@@ -41,6 +41,15 @@
                     output: function(){
                         console.log('Computed');
                         return this.counter > 10 ? 'Greater than 10' : 'Smaller thand 10';
+                    }
+                },
+                watch: {
+                    counter: function(value){
+                        var vm = this;
+                        setTimeout(function(){
+                            vm.counter = 0;
+                            console.log('Watch');
+                        },2000);
                     }
                 },
                 methods: {
