@@ -23,6 +23,7 @@
             <p>two-way-binding</p>
             <p><input type="text" v-model="name"></p>
             <p>{{ name }}</p>
+            <p>{{ result() }} || {{ output }}</p>
         </div>
         <script>
             new Vue({
@@ -35,6 +36,12 @@
                     x: 0,
                     y: 0,
                     name: ''
+                },
+                computed: {
+                    output: function(){
+                        console.log('Computed');
+                        return this.counter > 10 ? 'Greater than 10' : 'Smaller thand 10';
+                    }
                 },
                 methods: {
                     changeTitle: function(event){
@@ -55,7 +62,12 @@
                         event.stopPropagation();
                     },
                     alertMe: function(){
+                        console.log('Method');
                         alert('Alert');
+                    },
+                    result: function(){
+                        console.log('Method');
+                        return this.counter > 10 ? 'Greater than 10' : 'Smaller than 10';
                     }
                 }
             });

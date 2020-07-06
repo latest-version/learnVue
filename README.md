@@ -5,3 +5,9 @@ For leaning purposes, use the lastest version with:
 # Extensions for Visual Studio Code
 - Live Server
 - Vetur
+
+# Known Options for Vue Instance
+- el: Connect to DOM
+- data: Store Data to be used
+- mothods: Methods of this Vue Instance
+- computed: Dependence Properties
