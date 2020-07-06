@@ -15,7 +15,9 @@
             <p>{{ sayHello() }} : <a v-bind:href="link">Google</a></p>
             <br>
             <p v-html="finishedLink"></p>
-            <p><button v-on:click="increse(10, $event)">Click Me!</button>{{ counter }}</p>
+            <p><button v-on:click="increse(10, $event)">Click Me!</button></p>
+            <p><button v-on:click="counter++">Click Me!</button></p>
+            <p>{{ counter }} is {{ counter > 10 ? 'Greater than 10' : 'Smaller than 10' }}</p>
             <p>Coordinates: {{ x }} / {{ y }} - <span v-on:mousemove.stop="">DEAD SPOT</span></p>
             <p><input v-on:keyup.enter.space="alertMe"></p>
         </div>
