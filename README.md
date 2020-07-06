@@ -12,3 +12,7 @@ For leaning purposes, use the lastest version with:
 - mothods: Methods of this Vue Instance
 - computed: Dependence Properties
 - watch: Execute code upon data changes
+
+# Saving Time with Shorthands
+- change 'v-on' to '@' e.g. 'v-on:click' to '@click'
+- change 'v-bind' to ':' e.g. 'v-bind:href' to ':href'
