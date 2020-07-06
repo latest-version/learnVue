@@ -20,6 +20,9 @@
             <p>{{ counter }} is {{ counter > 10 ? 'Greater than 10' : 'Smaller than 10' }}</p>
             <p>Coordinates: {{ x }} / {{ y }} - <span v-on:mousemove.stop="">DEAD SPOT</span></p>
             <p><input v-on:keyup.enter.space="alertMe"></p>
+            <p>two-way-binding</p>
+            <p><input type="text" v-model="name"></p>
+            <p>{{ name }}</p>
         </div>
         <script>
             new Vue({
@@ -30,7 +33,8 @@
                     finishedLink: '<a href="http://www.google.com">Google</a>',
                     counter: 0,
                     x: 0,
-                    y: 0
+                    y: 0,
+                    name: ''
                 },
                 methods: {
                     changeTitle: function(event){
