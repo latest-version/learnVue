@@ -31,7 +31,7 @@
         <div id="app">
             <div class="demo"
                 @click="attachRed = !attachRed"
-                :class="{red: attachRed}">
+                :class="divClasses">
             </div>
             <div class="demo" :class="{blue: attachRed}"></div>
             <div class="demo" :class="{green: !attachRed}"></div>
@@ -41,6 +41,14 @@
                 el: '#app',
                 data: {
                     attachRed: false
+                },
+                computed: {
+                    divClasses: function(){
+                        return {
+                            red: this.attachRed,
+                            blue: !this.attachRed
+                        }
+                    }
                 }
             });
         </script>
